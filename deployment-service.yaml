@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: boardgame
-          image: muhammadfasil / boardgame # Image that will be used to containers in the cluster
+          image: 975049929621.dkr.ecr.us-east-1.amazonaws.com/muhammadfasil/boardgame # Image that will be used to containers in the cluster
           imagePullPolicy: Always
           ports:
             - containerPort: 8080 # The port that the container is running on in the cluster
