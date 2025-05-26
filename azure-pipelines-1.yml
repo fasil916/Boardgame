@@ -42,3 +42,8 @@ steps:
     repository: 'muhammadfasil/azure-repo'
     command: 'build'
     Dockerfile: '**/Dockerfile'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'docker-connection'
+    repository: 'muhammadfasil/azure-repo'
+    command: 'push'
