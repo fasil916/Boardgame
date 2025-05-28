@@ -20,7 +20,7 @@ steps:
     script: |
       # Write your commands here
       
-      echo '$RepoName'
+      echo '$(RepoName)'
 # - task: Maven@3
 #   inputs:
 #     mavenPomFile: '$(MAVEN_POM_FILE)'
