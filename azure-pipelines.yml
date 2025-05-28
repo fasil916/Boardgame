@@ -46,5 +46,5 @@ steps:
   inputs:
     awsCredentials: 'aws-azuedevops'
     regionName: 'us-east-1'
-    repository: 'dev/azuredevops-demo'
+    repository: '311141542585.dkr.ecr.us-east-1.amazonaws.com/dev/azuredevops-demo'
     imageSource: 'imagetag'
