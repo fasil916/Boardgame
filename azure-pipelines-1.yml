@@ -55,7 +55,6 @@ steps:
   inputs:
     awsCredentials: '$(AWS_CREDENTIALS_SERVICE_CONNECTION)'
     regionName: '$(AWS_REGION)'
-    imageSource: 'imageid'
     sourceImageId: '$(IMAGE_NAME):$(IMAGE_TAG)'
     repositoryName: '$(DOCKER_REPOSITORY_NAME)'
     pushTag: '$(IMAGE_TAG)'
