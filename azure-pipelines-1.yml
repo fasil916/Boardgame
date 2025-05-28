@@ -59,7 +59,8 @@ steps:
     awsCredentials: '$(AWS_CREDENTIALS_SERVICE_CONNECTION)'
     regionName: '$(AWS_REGION)'
     imageSource: 'imagename'
-    sourceImageName: $(DOCKER_REPOSITORY_NAME)
-    sourceImageTag: $(IMAGE_TAG)
-    repositoryName:  $(DOCKER_REPOSITORY_NAME)
+    sourceImageName: 'app-test'
+    sourceImageTag: '$(IMAGE_TAG)'
+    repositoryName: '$(DOCKER_REPOSITORY_NAME)'
+    pushTag: '$(Build.BuildId)'
     forceDockerNamingConventions: true
