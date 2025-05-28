@@ -52,7 +52,7 @@ steps:
     awsCredentials: 'aws-azuedevops'
     regionName: 'us-east-1'
     imageSource: 'imagename'
-    sourceImageName: 'dev/azuredevops-demo'
-    sourceImageTag: '$(Build.BuildId)'
+    sourceImageName: 'dev/azuredevops-demo:219 311141542585.dkr.ecr.us-east-1.amazonaws.com/devazuredevops-demo:latest'
+    sourceImageTag: 
     repositoryName: 'dev/azuredevops-demo'
     forceDockerNamingConventions: true
