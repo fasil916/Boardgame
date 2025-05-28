@@ -44,7 +44,7 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'docker-connection'
-    repository: $(DOCKER_REPOSITORY_NAME)
+    repository: 'app-test'
     command: 'build'
     Dockerfile: '**/Dockerfile'
     tags: $(IMAGE_TAG)
