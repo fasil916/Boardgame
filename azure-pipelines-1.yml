@@ -39,7 +39,7 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'docker-connection'
-    repository: 'dev/azuredevops-demo'
+    repository: '$(imagename)'
     command: 'build'
     Dockerfile: '**/Dockerfile'
     tags: $(Build.BuildId)
@@ -55,5 +55,4 @@ steps:
     sourceImageName: 'dev/azuredevops-demo'
     sourceImageTag: '$(Build.BuildId)'
     repositoryName: 'dev/azuredevops-demo'
-    pushTag: 
     forceDockerNamingConventions: true
