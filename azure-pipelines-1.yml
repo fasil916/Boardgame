@@ -57,6 +57,7 @@ steps:
     regionName: '$(AWS_REGION)'
     imageSource: 'imagename'
     sourceImageName: '$(IMAGE_NAME):$(IMAGE_TAG)'
+    sourceImageTag: '''$(IMAGE_TAG)'
     repositoryName: '$(DOCKER_REPOSITORY_NAME)'
     pushTag: '$(IMAGE_TAG)'
     forceDockerNamingConventions: true
