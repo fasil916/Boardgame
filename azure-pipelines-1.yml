@@ -53,3 +53,4 @@ steps:
     regionName: 'us-east-1'
     repository: 'dev/azuredevops-demo'
     imageSource: 'imagetag'
+    imageTag: '$(Build.BuildId)'
