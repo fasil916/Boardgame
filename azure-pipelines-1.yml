@@ -7,7 +7,7 @@ pool:
 variables:
   JAVA_VERSION: '1.11'
   MAVEN_POM_FILE: 'pom.xml'
-  DOCKER_REPOSITORY_NAME: 'azuredevops-demo'   # Set your Docker repo name here
+  DOCKER_REPOSITORY_NAME: 'devazuredevops-demo'   # Set your Docker repo name here
   AWS_REGION: 'us-east-1'
   AWS_CREDENTIALS_SERVICE_CONNECTION: 'aws-azuedevops'
   IMAGE_TAG: '$(Build.BuildId)'
