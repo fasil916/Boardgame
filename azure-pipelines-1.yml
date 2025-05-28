@@ -57,7 +57,7 @@ steps:
     imageSource: 'imagename'
     sourceImageName: '$(ECR_REPOSITORY_NAME)'
     sourceImageTag: '$(IMAGE_TAG)'
-    repositoryName: 'ECR_REPOSITORY_NAME'
+    repositoryName: '$(ECR_REPOSITORY_NAME)'
     pushTag: '$(IMAGE_TAG)'
     forceDockerNamingConventions: true
 
