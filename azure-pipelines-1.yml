@@ -68,3 +68,7 @@ steps:
     repository: 'devazuredevops-demo'
     imageSource: 'imagetag'
     imageTag: '$(IMAGE_TAG)'
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'docker images'
