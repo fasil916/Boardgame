@@ -47,10 +47,13 @@ steps:
   inputs:
     targetType: 'inline'
     script: 'docker images'
-- task: ECRPullImage@1
+- task: ECRPushImage@1
   inputs:
     awsCredentials: 'aws-azuedevops'
     regionName: 'us-east-1'
-    repository: 'dev/azuredevops-demo'
-    imageSource: 'imagetag'
-    imageTag: '$(Build.BuildId)'
+    imageSource: 'imagename'
+    sourceImageName: 'dev/azuredevops-demo'
+    sourceImageTag: '$(Build.BuildId)'
+    repositoryName: 'dev/azuredevops-demo'
+    pushTag: 
+    forceDockerNamingConventions: true
