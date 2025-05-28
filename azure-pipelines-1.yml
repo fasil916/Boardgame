@@ -5,6 +5,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
+  
   JAVA_VERSION: '1.11'
   MAVEN_POM_FILE: 'pom.xml'
   DOCKER_REPOSITORY_NAME: 'devazuredevops-demo'   # Set your Docker repo name here
@@ -44,7 +45,7 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'docker-connection'
-    repository: 'app-test'
+    repository: '$(ImageName)'
     command: 'build'
     Dockerfile: '**/Dockerfile'
     tags: $(IMAGE_TAG)
@@ -58,9 +59,8 @@ steps:
   inputs:
     awsCredentials: '$(AWS_CREDENTIALS_SERVICE_CONNECTION)'
     regionName: '$(AWS_REGION)'
-    imageSource: 'imagename'
-    sourceImageName: 'app-test'
-    sourceImageTag: '$(IMAGE_TAG)'
-    repositoryName: '$(DOCKER_REPOSITORY_NAME)'
+    imageSource: 'imageid'
+    sourceImageId: '$(ImageName):$(IMAGE_TAG)'
+    repositoryName: '$(RepoName)'
     pushTag: '$(Build.BuildId)'
     forceDockerNamingConventions: true
