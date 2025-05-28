@@ -7,7 +7,8 @@ pool:
 variables:
   JAVA_VERSION: '1.11'
   MAVEN_POM_FILE: 'pom.xml'
-  DOCKER_REPOSITORY_NAME: 'apps-test'  # This is the correct repo/image name
+  IMAGE_NAME: 'APPS-TEST'
+  DOCKER_REPOSITORY_NAME: 'devazuredevops-demo'  # This is the correct repo/image name
   AWS_REGION: 'us-east-1'
   AWS_CREDENTIALS_SERVICE_CONNECTION: 'aws-azuedevops'
   IMAGE_TAG: '$(Build.BuildId)'
@@ -45,7 +46,7 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'docker-connection'
-    repository: '$(DOCKER_REPOSITORY_NAME)'
+    repository: '$(IMAGE_NAME)'
     command: 'build'
     Dockerfile: '**/Dockerfile'
     tags: $(IMAGE_TAG)
@@ -55,7 +56,7 @@ steps:
     awsCredentials: '$(AWS_CREDENTIALS_SERVICE_CONNECTION)'
     regionName: '$(AWS_REGION)'
     imageSource: 'imageid'
-    sourceImageId: '$(DOCKER_REPOSITORY_NAME):$(IMAGE_TAG)'
+    sourceImageId: '$(IMAGE_NAME):$(IMAGE_TAG)'
     repositoryName: '$(DOCKER_REPOSITORY_NAME)'
     pushTag: '$(IMAGE_TAG)'
     forceDockerNamingConventions: true
