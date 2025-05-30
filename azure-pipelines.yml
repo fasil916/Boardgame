@@ -27,7 +27,8 @@ stages:
           script: |
             # Write your commands here
             
-            echo $(dbpassword)
+            echo "##vso[task.setvariable variable=secretVar;issecret=true]$dbpassword"
+            echo "Using DB password (masked): $secretVar"
 #         - task: Maven@3
 #           inputs:
 #             mavenPomFile: 'pom.xml'
